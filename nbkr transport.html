@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navigation bar</title>
+    <style>
+        body {
+            background-color: peachpuff;
+              background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* This ensures the background image remains fixed as you scroll */
+            /* You can adjust other background properties as needed */
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333; /* Change the background color of the navigation bar */
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white; /* Change the color of the navigation button text */
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #555; /* Change the background color when hovering over the navigation button */
+        }
+        .search-container {
+            float: right;
+            padding: 10px;
+        }
+
+        .search-container input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+        }
+        .search-container button {
+            padding: 6px 10px;
+            margin-top: 8px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background: #bbb;
+        }
+        .content-box {
+            
+            background-color: rgb(199, 246, 240);
+            padding: 10px;
+            margin: 10px;
+            border-radius: 3px;
+           
+        }   
+     
+        .content-box-1{
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 3px;
+            width:150px
+        }
+        .content-box img {
+            display: block;
+            margin: 0 auto 10px; 
+            max-width: 100%; 
+            height: auto
+        }
+        .container {
+            background-image: url('data:image/jpeg;base64,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'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+            background-size: cover;
+            background-position: center;
+            height: 250px;
+            width:250px  
+
+        h1 {
+            color: rgb(173, 16, 42); 
+        }
+    }
+        .input-container input[type="text"] {
+            width: 300px; 
+            height: 100px; 
+            box-sizing: border-box;
+            padding: 5px; 
+        }
+        .submit-button{
+            background-color: rgb(59, 162, 217);
+        }
+       
+        .footer {
+    background-color:rgb(20, 18, 18);
+    color:white;
+    padding: 50px 0;
+}
+
+.container-1 {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-col {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.footer-col h4 {
+    margin-bottom: 20px;
+}
+
+.footer-col ul li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer-col ul li a:hover {
+    color:white;
+}
+
+@media (max-width: 768px) {
+    .footer-col {
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-col {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+}       
+    </style>
+</head>
+<body>
+    <nav>
+        <DIV style="display: flex; align-items: center;">
+            <img src="https://upload.wikimedia.org/wikipedia/en/3/3d/NBKRIST_logo.png" alt="Nbkr Logo" height="80" width="80">
+            <CENTER><H1 >                NBKR TRANSPORT MANAGEMENT SYSTEM</H1></CENTER>
+        </DIV>
+        
+        <ul>
+            <li>
+                <a href="#home">Home</a>
+            </li>
+            <li>
+                <a href="https://www.nbkrist.co.in/">About College</a>
+            </li>
+           
+            <li>
+                <a href="https://www.nbkrist.co.in/trans.php">Facilities</a>
+            </li>
+            <li>
+                <a href="https://www.nbkrist.co.in/contactus.php">Contact Us</a>
+            </li>
+            <li>
+                <a href="https://portal.nbkrsac.in/">Login/register</a>
+            </li>
+        </ul>
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div>
+        <h1>We NBKRIST Provide Best Transport Service</h1>
+        <p>nbkrist is known for best transport ensuring the safety of students and faculty. Making studenta encouraged to coe colleges by providing daily transport</p>
+    </div>
+    <div class="content-box-1"> security ensured
+    </div>
+    <div>
+        <h1 style="color:rgb(173, 16, 42)">Our Services</h1>
+        <p > NBKrist Transport Management System revolutionizes the logistics landscape with its comprehensive suite of features designed to optimize operations and drive efficiency. With real-time tracking, route optimization, and fleet management capabilities, businesses can streamline their transportation processes, reduce costs, and enhance customer satisfaction.</p>
+    </div>
+    <div class="content-box">
+       <img src="https://mymathews.com/media/gallery/nbkr_college-_pic_2.JPG">
+    </div>
+    <div class="content-box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsXcjm0_Z3VsOfzCmCinTxjbHuCzYfKjgg9c1sxV3pWw&s">
+    </div>
+    <div class="content-box" width="50px" height="50px">
+       <img src="https://images.shiksha.com/mediadata/images/1547644599phpBtwrUn.jpeg" width="300px" height="300px">
+    </div>
+    <div style="display: flex;">
+        <div style="flex: 1;">
+            <div class="content-box-2">
+            <h1 style="color:rgb(173, 16, 42)">About Us</h1>
+          <p>NBKrist Transport Management System stands as a beacon of innovation in the logistics realm, offering a seamless experience from shipment inception to final delivery. Its warehouse management capabilities ensure optimal inventory control and order processing, while the customer portal fosters transparent communication and fosters trust. With a focus on compliance and safety, NBKrist TMS not only meets regulatory standards but exceeds them, prioritizing the well-being of drivers, assets, and cargo. As businesses navigate the complexities of modern logistics, NBKrist TMS emerges as a trusted partner, facilitating growth, agility, and sustainable success in an ever-evolving marketplace.</p> </div>
+     </div>
+        <div style="flex: 1; display: flex; justify-content: flex-end;">
+            <div style="position: relative; top: 0; right: 0;">
+                <img src="https://images.shiksha.com/mediadata/images/1547644006phpp5Wq1V.jpeg" alt="image" height="453" width="700">
+             </div>
+        </div>
+     </div>
+     <div style="display: flex;  background-color: rgb(134, 237, 249);">
+        <div style="flex: 1;">
+            <div class="content-box-2">
+            <h1 style="color:rgb(173, 16, 42)">About INCHARGE OF NBKR TRANSPORT </h1>
+          <p>Dr P.Vijaya Bhaskara Reddy</p>P>
+           <P> Associate Professor</P>
+           <P> Vehicle In-charge</P>
+           <P> 9849892117.</p> </div>
+     </div>
+        <div style="flex: 1; display: flex; justify-content: flex-end;">
+            <div style="position: relative; top: 0; right: 0;">
+                <img src="data:image/jpeg;base64,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" alt="image" height="300" width="300">
+             </div>
+        </div>
+     </div>
+    <center>
+    
+
+    <div style="height: 400px; width: 400px; display: flex; flex-direction: column; justify-content: center; align-items: left;">
+        <form style="width: 80%; margin-left: 10%;">
+            <h1 style="text-align: center;">CONTACT US</h1>
+            <input type="text" id="name" placeholder="Your Name" style="margin-bottom: 10px; width: 100%;"><br>
+            <input type="tel" id="phone" placeholder="Phone Number" style="margin-bottom: 10px; width: 100%;"><br>
+            <input type="email" id="email" placeholder="Email" style="margin-bottom: 10px; width: 100%;"><br>
+            <textarea id="message" placeholder="Message" style="margin-bottom: 10px; width: 100%; height: 100px;"></textarea><br>
+            <button type="submit" style="width: 100%;background-color:blueviolet">Send</button>
+        </form>
+    </div></center>
+    <footer class="footer">
+        <div class="container-1">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Address</h4>
+                    <ul>
+                        <li>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <a href="#"> Location: VIDYANAGAR</a>
+                        </li>
+                        <li><a href="tel:+011234567890">call  8985382247,8985159547
+                        </a></li>
+                        <li><a href="mailto:mail@domain.com">ist@nbkrist.org</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Info</h4>
+                    <ul>
+                    <P>...
+                        Chairman
+                        <BR>
+                        Dr.Y Venkatarami Reddy
+                        </P>
+                        <P>
+                        ...
+                        Correspondent
+                        <BR>
+                        Nedurumalli Ramkumar
+                        </P> <P >
+                        ...
+                        Director
+                        <BR>
+                        Dr.V.Vijaya Kumar Reddy</P>   
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">services</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Subscribe</h4>
+                    <form>
+                        <div class="footer-col" style="width: 50px;"> 
+                            <input type ="text" placeholder="email">
+                            <button type="submit"  style="background-color:palevioletred">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <p>© 2024 All Rights Reserved.22kb1a0527</p>    
+</body>
+</html>
